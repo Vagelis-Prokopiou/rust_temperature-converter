@@ -53,9 +53,13 @@ fn main() {
 
     // Make tha calculation based on the temperature_scale.
     if temperature_scale == "F" {
-        println!("{} Celcius = {} Fahrenheit", temperature_for_conversion_float, helpers::convert(&temperature_for_conversion_float, &temperature_scale));
+        println!("{} Celcius = {} Fahrenheit",
+                 temperature_for_conversion_float,
+                 helpers::convert(&temperature_for_conversion_float, &temperature_scale));
     }
     if temperature_scale == "C" {
-        println!("{} Fahrenheit = {} Celcius", temperature_for_conversion_float, helpers::convert(&temperature_for_conversion_float, &temperature_scale));
+        println!("{} Fahrenheit = {} Celcius",
+                 temperature_for_conversion_float,
+                 helpers::convert(&temperature_for_conversion_float, &temperature_scale));
     }
 }

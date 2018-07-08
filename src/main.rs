@@ -2,6 +2,7 @@ use std::io;
 
 fn main() {
     let mut temperature_for_conversion: String = String::new();
+    let mut temperature_for_conversion_float: f32 = 0 as f32;
     let mut temperature_scale: String = String::new();
     let mut is_valid_temperature: bool = false;
 
@@ -13,7 +14,7 @@ fn main() {
             .read_line(&mut temperature_for_conversion)
             .expect("Failed to read line.");
 
-        let temperature_for_conversion: f32 = match temperature_for_conversion
+        temperature_for_conversion_float = match temperature_for_conversion
             .trim()
             .parse() {
             Ok(num) => {
@@ -31,7 +32,7 @@ fn main() {
 
     // Get a valid temperature_scale.
     loop {
-        println!("Please, provide the temperature scale (F/C):");
+        println!("Please, provide the target temperature scale (F/C):");
 
         io::stdin()
             .read_line(&mut temperature_scale)
@@ -50,8 +51,8 @@ fn main() {
 
     // Make tha calculation based on the temperature_scale.
     if temperature_scale == "F" {
-        print!("It is Fahreneight.")
+        println!("{} Celcius = {} Fahrenheit", temperature_for_conversion_float, (temperature_for_conversion_float * 1.8 + 32 as f32));
     } else {
-        print!("It is Celcius.")
+        println!("{} Fahrenheit = {} Celcius", temperature_for_conversion_float, ((temperature_for_conversion_float - 32 as f32) * 0.5556));
     }
 }

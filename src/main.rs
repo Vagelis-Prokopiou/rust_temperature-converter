@@ -1,5 +1,7 @@
 use std::io;
 
+mod helpers;
+
 fn main() {
     let mut temperature_for_conversion: String = String::new();
     let mut temperature_for_conversion_float: f32 = 0 as f32;
@@ -51,8 +53,9 @@ fn main() {
 
     // Make tha calculation based on the temperature_scale.
     if temperature_scale == "F" {
-        println!("{} Celcius = {} Fahrenheit", temperature_for_conversion_float, (temperature_for_conversion_float * 1.8 + 32 as f32));
-    } else {
-        println!("{} Fahrenheit = {} Celcius", temperature_for_conversion_float, ((temperature_for_conversion_float - 32 as f32) * 0.5556));
+        println!("{} Celcius = {} Fahrenheit", temperature_for_conversion_float, helpers::convert(&temperature_for_conversion_float, &temperature_scale));
+    }
+    if temperature_scale == "C" {
+        println!("{} Fahrenheit = {} Celcius", temperature_for_conversion_float, helpers::convert(&temperature_for_conversion_float, &temperature_scale));
     }
 }

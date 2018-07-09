@@ -1,11 +1,5 @@
 pub fn round(number: &f32, decimals: u8) -> f32 {
-    let mut rounder: f32 = 10.0;
-    if decimals == 2 {
-        rounder = 100.0;
-    }
-    if decimals == 3 {
-        rounder = 1000.0;
-    }
+    let rounder: f32 = 10_f32.powf(decimals as f32);
     return (number * rounder).round() / rounder;
 }
 

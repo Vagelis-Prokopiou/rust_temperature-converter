@@ -28,15 +28,15 @@ mod tests {
     #[test]
     fn convert_test() {
         // To Fahrenheit
-        assert_eq!(convert(&(0 as f32), &"F"), 32);
-        assert_eq!(convert(&(2 as f32), &"F"), 35.6);
-        assert_eq!(convert(&(5 as f32), &"F"), 41);
-        assert_eq!(convert(&(23 as f32), &"F"), 73.4);
+        assert_eq!(convert(&(0.0), &"F"), 32.0);
+        assert_eq!(convert(&(2.0), &"F"), 35.6);
+        assert_eq!(convert(&(5.0), &"F"), 41.0);
+        assert_eq!(convert(&(23.0), &"F"), 73.4);
 
         // To Celsius
-        assert_eq!(convert(&(0 as f32), &"C"), -17.7778);
-        assert_eq!(convert(&(2 as f32), &"C"), -16.6667);
-        assert_eq!(convert(&(5 as f32), &"C"), -15);
-        assert_eq!(convert(&(23 as f32), &"C"), -5);
+        assert_eq!(convert(&(0.0), &"C"), -17.7778);
+        assert_eq!(convert(&(2.0), &"C"), -16.6667);
+        assert_eq!(convert(&(5.0), &"C"), -15.0);
+        assert_eq!(convert(&(23.0), &"C"), -5.0);
     }
 }

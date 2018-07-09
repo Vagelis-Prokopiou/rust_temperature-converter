@@ -42,7 +42,7 @@ fn main() {
 
         temperature_scale = temperature_scale.trim().to_string();
 
-        if temperature_scale == "F" || temperature_scale == "C" {
+        if helpers::is_valid_temperature_scale(&temperature_scale) {
             break;
         } else {
             temperature_scale = String::new();

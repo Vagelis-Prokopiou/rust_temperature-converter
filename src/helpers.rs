@@ -9,3 +9,7 @@ pub fn convert(temperature: &f32, temperature_scale: &str) -> f32 {
 
     return (temperature - 32 as f32) * 0.5556;
 }
+
+pub fn is_valid_temperature_scale(temperature_scale: &str) -> bool {
+    return temperature_scale == "F" || temperature_scale == "C";
+}

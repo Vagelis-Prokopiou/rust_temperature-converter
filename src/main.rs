@@ -4,7 +4,7 @@ mod helpers;
 
 fn main() {
     let mut temperature_for_conversion: String = String::new();
-    let mut temperature_for_conversion_float: f32 = 0 as f32;
+    let mut temperature_for_conversion_float: f32 = 0.0;
     let mut temperature_scale: String = String::new();
     let mut is_valid_temperature: bool = false;
 

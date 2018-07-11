@@ -27,9 +27,13 @@ mod tests {
 
     #[test]
     fn test_round() {
-        assert_eq!(round(&0.1234_f32, 1), 0.1);
-        assert_eq!(round(&0.1234_f32, 2), 0.12);
-        assert_eq!(round(&0.1234_f32, 3), 0.123);
+        assert_eq!(round(&0.1234567_f32, 1), 0.1);
+        assert_eq!(round(&0.1234567_f32, 2), 0.12);
+        assert_eq!(round(&0.1234567_f32, 3), 0.123);
+        assert_eq!(round(&0.1234567_f32, 4), 0.1235);
+        assert_eq!(round(&0.1234567_f32, 5), 0.12346);
+        assert_eq!(round(&0.1234567_f32, 6), 0.123457);
+        assert_eq!(round(&0.1234567_f32, 7), 0.1234567);
     }
 
     #[test]

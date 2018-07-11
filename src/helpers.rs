@@ -26,21 +26,21 @@ mod tests {
     use super::*;
 
     #[test]
-    fn round_test() {
+    fn test_round() {
         assert_eq!(round(&0.1234_f32, 1), 0.1);
         assert_eq!(round(&0.1234_f32, 2), 0.12);
         assert_eq!(round(&0.1234_f32, 3), 0.123);
     }
 
     #[test]
-    fn is_valid_temperature_scale_test() {
+    fn test_is_valid_temperature_scale() {
         assert_eq!(is_valid_temperature_scale(&"F"), true);
         assert_eq!(is_valid_temperature_scale(&"C"), true);
         assert_eq!(is_valid_temperature_scale(&"a"), false);
     }
 
     #[test]
-    fn convert_test() {
+    fn test_convert() {
         let decimals: u8 = 2;
 
         // To Fahrenheit
